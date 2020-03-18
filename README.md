@@ -21,7 +21,7 @@ This page consists of 3 charts containing same data: bar chart, pie chart and li
 ## Grid Page
 This page consists of a data grid with static data. The data grid supports features including sorting, filtering, searching and pagination. The data is user keystroke data recorded from form.html page. The library we used is Zing-Grid.
 
-
+Note: The delete button at the top of each page is used to clean storage. After you click delete button, all records and login user information will be deleted.
 ## Firebase Usage
 
 firebase founction link:
