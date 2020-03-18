@@ -1,15 +1,34 @@
-CSE135HW3
+CSE135HW5
 ====
 Author: Chang Lei, Peng Yucheng
-pid: A16185861, 16185910
-firebase link:
+pid: A16185861, A16185910
+
+firebase hosting URL : https://cse135-final-68729.firebaseapp.com
+
+# User Action Tracker
+This application is a system which allows users to try on several static pages and records their actions into firebase database. And an admin user will be able to view the tracked data using charts and grids.
+
+## Login Page
+You can login as two users: 135grader@ucsd.edu or 135fakegrader@ucsd.edu, with the same password: password
+The chart page and grid page will be accessable only when you login as 135grader@ucsd.edu. Otherwise they would be hidden and the page will tell you to login as 135grader@ucsd.edu.
+
+## Static Pages
+The static pages include index.html, images.html, form.html, tables.html and externals.html. User can try mouseover, click, idle and keystroke events in different page. The user action data in these pages will be tracked into database.
+
+## Chart Page
+This page consists of 3 charts containing same data: bar chart, pie chart and line chart. The data is user actions tracked from all other static pages. The library we use is HighCharts.
+
+## Grid Page
+This page consists of a data grid with static data. The data grid supports features including sorting, filtering, searching and pagination. The data is user keystroke data recorded from form.html page. The library we used is Zing-Grid.
+
+
+
+
+firebase founction link:
   Function URL: https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/showdb
                 https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect
                 
-note: You can just simply use navigation bar to go to each page. For static data, it is stored in the cloud database and can be called once you click the related button on the test page. Since it will be hard to be messed up, there is no purge function implemented for them. For time information, it will be stored separately for each page. For dynamic data, especially click and mouse movement, I use several examples to show my logic. I did not make it working for all parts of each page since it may be very time consuming. You can test my results using the button in form.html as well as the first three buttons in test page. Besides, you can test my mouse movement function using the flower image file in images.html as well as the image in the test page. For keystrokes, only input area in form.html is implemented. Each of the handler supports a purge function as well as requested. Please feel free to ask me if there is anything confused.
-
-
-Minify traker.js: The code is modified manually to minimize the size. We store the data temporary instead of storing in localstorage, and sent user actions together before user unloading the page.
+note: You can just simply use navigation bar to go to each page. For tracked data, it is stored in the cloud database and can be called once you click the related stuffs on the test page. For time information, it will be stored separately for each page. 
 
 Data storage:
   Page info: collect/page_info
