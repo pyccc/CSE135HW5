@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Image Page</title>
+        <link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        <link href="styles/main.css" rel="stylesheet">
+        <link href="styles/images.css" rel="stylesheet">
+        
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+        <script src="scripts/tracker.js"></script>
+        <script src="../functions/index.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                User-action Record
+            </header>
+        </div>
+        <br>
+        <!--button class="custom_button"
+            onclick="window.open('https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect')">NON-JS-Flow</button-->
+        <br>
+        <nav name="testButton" id="navigation">
+            <a class="navigation" href="index.html">Home</a>
+            <a class="navigation" href="images.html">Images</a>
+            <a class="navigation" href="form.html">Form</a>
+            <a class="navigation" href="table_and_lists.html">Table&List</a>
+            <a class="navigation" href="externals.html">Externals</a>
+            <a class="navigation" href="chart.html">Chart</a>
+            <a class="navigation" href="grid.html">Grid</a>
+            <a class="navigation" href="login.html" onclick="remove()">Log out</a>
+            <div id="user" style="color: white;"></div>
+        </nav><br>
+        <button id="delete" onclick="remove()">delete</button>
+        <script>
+            document.getElementById("user").innerText= "User: "+localStorage.getItem("user");
+            function remove(){
+                localStorage.clear();
+            }
+        </script><br>
+        <h3>Actions that will be recored in this page: <br>
+            clicks on images, scroll up and down, idle time track, mouse-over on images. </h3>
+        <br><br>
+        <img id="image1" src="images/smiley.gif" alt="gif" width="100" height="100"> &nbsp; &nbsp;
+        <img id="image2" src="images/gif.gif" alt="animated_gif" width="250" height="200"> &nbsp; &nbsp;
+        <picture>
+            <source media="(min-width: 200px)" srcset="images/img_pink_flowers.jpg">
+            <source media="(min-width: 100px)" srcset="images/game.jpg">
+            <img id="image3" src="images/game.jpg" alt="Flowers" style="width:auto;">
+          </picture>
+        <!--img src="images/game.jpg" alt="jpeg" width="250" height="200"--> &nbsp; &nbsp;
+        <img id="image4" src="images/eg.png" alt="png" width="200" height="100"> &nbsp; &nbsp;
+        <br><br><br>
+        <img id="image5" src="images/ani.png" alt="animated png" width="200" height="200"> &nbsp; &nbsp;
+        <img id="image6" src="images/night.webp" alt="webp" width="300" height="200"> &nbsp; &nbsp;
+        <img id="image7" src="images/game.svg" alt="svg" width="300" height="200">
+
+    <br><br><br>
+</body>
+</html>

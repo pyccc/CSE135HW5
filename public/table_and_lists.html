@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table&List Page</title>
+        <link href="styles/main.css" rel="stylesheet">
+        <link href="styles/table.css" rel="stylesheet">
+        <script src="scripts/tracker.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                User-action Record
+            </header>
+        </div>
+        <br>
+        <!--button class="custom_button"
+            onclick="window.open('https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect')">NON-JS-Flow</button-->
+        <br>
+        <nav name="testButton" id="navigation">
+            <a class="navigation" href="index.html">Home</a>
+            <a class="navigation" href="images.html">Images</a>
+            <a class="navigation" href="form.html">Form</a>
+            <a class="navigation" href="table_and_lists.html">Table&List</a>
+            <a class="navigation" href="externals.html">Externals</a>
+            <a class="navigation" href="chart.html">Chart</a>
+            <a class="navigation" href="grid.html">Grid</a>
+            <a class="navigation" href="login.html" onclick="remove()">Log out</a>
+            <div id="user" style="color: white;"></div>
+        </nav>
+        <br><br>
+        <button id="delete" onclick="remove()">delete</button>
+        <script>
+            document.getElementById("user").innerText= "User: "+localStorage.getItem("user");
+            function remove(){
+                localStorage.clear();
+            }
+        </script><br>
+        <h3>Actions that will be recored in this page: <br>
+            scroll up and down, mouseover on the table, mouseover on various lists and idle time track.</h3>
+
+        <br><br>
+        <table id="table">
+            <caption>
+                Weekly Schedule
+            </caption>
+            <colgroup>
+                <col span="6" style="background-color:grey">
+              </colgroup>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td class="lecture">CSE135</td>
+                    <td></td>
+                    <td class="lecture">CSE135</td>
+                    <td></td>
+                    <td class="lecture">CSE135</td>
+                </tr>
+                <tr>
+                    <td>9:00-10:00</td>
+                    <td></td>
+                    <td class="lecture">CSE253</td>
+                    <td></td>
+                    <td class="lecture">CSE253</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10:00-11:00</td>
+                    <td></td>
+                    <td class="lecture">CSE253</td>
+                    <td></td>
+                    <td class="lecture">CSE253</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11:00-12:00</td>
+                    <td class="discussion">CSE135</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>12:00-13:00</td>
+                    <td rowspan="5" colspan="5"></td>
+                </tr>
+                <tr><td>13:00-14:00</td></tr>
+                <tr><td>14:00-15:00</td></tr>
+                <tr><td>15:00-16:00</td></tr>
+                <tr><td>16:00-17:00</td></tr>
+                <tr>
+                    <td>17:00-18:00</td>
+                    <td class="lecture">CSE120</td>
+                    <td></td>
+                    <td class="lecture">CSE120</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>18:00-19:00</td>
+                    <td class="lecture">CSE120</td>
+                    <td class="discussion">CSE120</td>
+                    <td class="lecture">CSE120</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>19:00-20:00 class="lecture"</td>
+                    <td class="lecture">CSE167</td>
+                    <td></td>
+                    <td class="lecture">CSE167</td>
+                    <td class="discussion">CSE167</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="5">Totally 4 courses with 16 units.<br>
+                    Burlywood color for leture and blue for discussion.</td>
+                </tr>
+            </tfoot>
+
+        </table>
+        <br>
+        <h4>Things to finish</h4>
+        <ol id="list1">
+            <li>CSE120 PA2. 1.26 ddl</li>
+            <li>CSE167 HW1. 1.31 ddl</li>
+            <li>CSE135 HW2. </li>
+            <li>CSE253 PA2. </li>
+        </ol>
+        <h4>Things to learn</h4>
+        <ul id="list2">
+            <li>Operating System</li>
+            <li>Computer Graphics</li>
+            <li>Database </li>
+            <li>Deep Learning</li>
+        </ul>
+        <h4>Inspired Quotes</h4>
+        <dl id="list3">
+            <dt>Martin Luther King, Jr.</dt>
+            <dd>We are not makers of history. We are made by history.</dd>
+            <dd>As the center of non-violence stands the principle of love.</dd>
+        </dl>        
+        <br><br><br>
+
+    </body>
+</html>

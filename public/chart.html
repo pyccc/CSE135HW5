@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chart Page</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!--script src="../hw3/public/scripts/tracker.js"></script-->
+</head>
+<body>
+    <div class="header">
+        <header>
+            User-action Record
+        </header>
+    </div>
+    <br>
+    <!--button class="custom_button"
+        onclick="window.open('https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect')">NON-JS-Flow</button-->
+    <br>
+    <nav name="testButton" id="navigation">
+        <a class="navigation" href="index.html">Home</a>
+        <a class="navigation" href="images.html">Images</a>
+        <a class="navigation" href="form.html">Form</a>
+        <a class="navigation" href="table_and_lists.html">Table&List</a>
+        <a class="navigation" href="externals.html">Externals</a>
+        <a class="navigation" href="chart.html">Chart</a>
+        <a class="navigation" href="grid.html">Grid</a>
+        <a class="navigation" href="login.html" onclick="remove()">Log out</a>
+        <div id="user" style="color: white;"></div>
+    </nav><br>
+    <button id="delete" onclick="remove()">delete</button>
+    <script>
+        document.getElementById("user").innerText= "User: "+localStorage.getItem("user");
+        function remove(){
+            localStorage.clear();
+        }
+    </script>
+<br><br>
+
+<div id="container" style="width:100%; height:400px;"></div>
+
+<div id="container2">You can only access this page as <b>135grader@ucsd.edu</b></div>
+<script>
+    if(localStorage.getItem("user")!="135grader@ucsd.edu"){
+        console.log("not admin login");
+        document.getElementById("container").style.display='none';
+    }
+    else{
+        document.getElementById("container2").style.display='none';
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('container', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'User Actions'
+            },
+            xAxis: {
+                categories: ['Click', 'Scroll', 'Mouse over', 'Idle time detected']
+            },
+            yAxis: {
+                title: {
+                    text: 'Times'
+                }
+            },
+            series: [{
+                name: 'Times',
+                data: [parseInt(localStorage.getItem("click")?JSON.parse(localStorage.getItem("click")).length:0), parseInt(localStorage.getItem("scroll")?JSON.parse(localStorage.getItem("scroll")).length:0),
+                    parseInt(localStorage.getItem("mouse")?JSON.parse(localStorage.getItem("mouse")).length:0), parseInt(localStorage.getItem("idletime")?JSON.parse(localStorage.getItem("idletime")).length:0)]
+            }]
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Grid Page</title>
+  <link href="styles/main.css" rel="stylesheet">
+  <script src="https://cdn.zinggrid.com/zinggrid.min.js" defer></script>
+  <!--script src="../hw3/public/scripts/tracker.js"></script-->
+  <script src="scripts//grid.js"></script>
+  <script src="scripts//tracker.js"></script>
+  <style>
+    body {
+      background: #e6e6e6;
+    }
+
+    zing-grid {
+      overflow: hidden;
+    }
+
+    zing-grid[loading] {
+      height: 373px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      User-action Record
+    </header>
+  </div>
+  <br>
+  <!--button class="custom_button"
+    onclick="window.open('https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect')">NON-JS-Flow</button-->
+  <br>
+  <nav name="testButton" id="navigation">
+    <a class="navigation" href="index.html">Home</a>
+    <a class="navigation" href="images.html">Images</a>
+    <a class="navigation" href="form.html">Form</a>
+    <a class="navigation" href="table_and_lists.html">Table&List</a>
+    <a class="navigation" href="externals.html">Externals</a>
+    <a class="navigation" href="chart.html">Chart</a>
+    <a class="navigation" href="grid.html">Grid</a>
+    <a class="navigation" href="login.html" onclick="remove()">Log out</a>
+    <div id="user" style="color: white;"></div>
+  </nav><br><br>
+  <button id="delete" onclick="remove()">delete</button>
+  
+
+  <div id="grid2">You can only access this page as <b>135grader@ucsd.edu</b></div>
+  <zing-grid id="grid" caption="Static data and Keyboard Input" sort filter search pager page-size="9"
+    page-size-options="3,6,9" layout="row" viewport-stop></zing-grid>
+    <script>
+      document.getElementById("user").innerText= "User: "+localStorage.getItem("user");
+      function remove() {
+        localStorage.clear();
+      }
+      if(localStorage.getItem("user")!="135grader@ucsd.edu"){
+          console.log("not admin login");
+          document.getElementById("grid").style.display='none';
+      }
+      else{
+          document.getElementById("grid2").style.display='none';
+      }
+    </script><br>
+</body>
+
+</html>

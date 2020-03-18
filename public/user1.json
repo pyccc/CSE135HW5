@@ -1,0 +1,13 @@
+{
+    "users": [
+      {
+        "email": "135grader@ucsd.edu",
+        "password": "password"
+      },
+      {
+        "email": "135fakegrader@ucsd.edu",
+        "password": "password"
+      }
+    ]
+  }
+  

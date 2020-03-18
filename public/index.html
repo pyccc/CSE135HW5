@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>User-action Record Application</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="scripts/tracker.js"></script>
+    <script src="../functions/index.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="header">
+            <header>
+                User-action Record
+            </header>
+        </div>
+        <br>
+        <!--button class="custom_button"
+            onclick="window.open('https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect')">NON-JS-Flow</button-->
+        <br>
+        <nav name="testButton" id="navigation">
+            <a class="navigation" href="index.html">Home</a>
+            <a class="navigation" href="images.html">Images</a>
+            <a class="navigation" href="form.html">Form</a>
+            <a class="navigation" href="table_and_lists.html">Table&List</a>
+            <a class="navigation" href="externals.html">Externals</a>
+            <a class="navigation" href="chart.html">Chart</a>
+            <a class="navigation" href="grid.html">Grid</a>
+            <a class="navigation" href="login.html" onclick="remove()">Log out</a> 
+            <div id="user" style="color: white;"></div>
+        </nav><br>
+        <button id="delete" onclick="remove()">delete</button>
+        <script>
+            document.getElementById("user").innerText= "User: "+localStorage.getItem("user");
+            function remove(){
+                localStorage.clear();
+            }
+        </script>
+        <div class="intro">
+            <h2 id="app-intro"><em>Introduction</em></h2>
+            <h3 id="introduction">Our application works as an analytics system which records users' actions in our web pages.<br>
+            You can go to different pages, including images, form, table and externals.<br>
+            Each page includes some contents and you can use mouse to click or scroll, keyboard to type in text or just stay in one page doing nothing.<br>
+            Our application will help you save all these data and show the results in two visualized pages, chart and grid. 
+            The chart page includes any dynamic data excepts the keyboard input. The grid page then includes data for static data as well as keyboard input information.
+            <br>You can also remove the stored data to have a better view for recent data anytime by clicking the delete button above.</h3>
+        </div>
+        <br><br><br><br>
+    </main>
+    <!--script src="scripts/main.js"></script-->
+    <script>
+        function js() {
+            //let x = localStorage.getItem("javascript_on");
+            let x = document.querySelector("script[src*='" + "main.js" + "']");
+            if (x) {
+                localStorage.setItem("javascript_on", true);
+            } else {
+                localStorage.setItem("javascript_on", false);
+            }
+        }
+    </script>
+
+</body>
+    <footer>
+        <div class="grid-footer">
+            <address id="address">
+                Contact <a href="mailto:l2chang@ucsd.edu">Chang Lei</a> or <a href="mailto:">Peng Yucheng</a><br>
+                Visit us at:<br>
+                8889 Caminito Centro Plaza<br>
+                San Diego, California
+            </address>
+            <div id="ph">
+                <p>ph: 424-278-3541</p>
+            </div>
+        </div>
+    </footer>
+
+</html>

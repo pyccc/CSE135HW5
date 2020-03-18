@@ -1,0 +1,21 @@
+caption{
+    text-align: center;
+    font-size: 20px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+td.lecture {
+    background-color: burlywood;
+}
+td.discussion {
+    background-color: cornflowerblue;
+}
+dl{
+    padding-left: 20px;
+}

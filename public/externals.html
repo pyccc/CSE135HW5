@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Externals Page</title>
+        <link href="styles/externals.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.sstatic.net/clc/styles/clc.min.css?v=308d7ccd0858" type="text/css">
+        
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+        <script src="scripts//tracker.js"></script>
+        <script src="../functions/index.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <header>
+                User-action Record
+            </header>
+        </div>
+        <br>
+        <!--button class="custom_button"
+            onclick="window.open('https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/collect')">NON-JS-Flow</button-->
+        <br>
+        <nav name="testButton" id="navigation">
+            <a class="navigation" href="index.html">Home</a>
+            <a class="navigation" href="images.html">Images</a>
+            <a class="navigation" href="form.html">Form</a>
+            <a class="navigation" href="table_and_lists.html">Table&List</a>
+            <a class="navigation" href="externals.html">Externals</a>
+            <a class="navigation" href="chart.html">Chart</a>
+            <a class="navigation" href="grid.html">Grid</a>
+            <a class="navigation" href="login.html" onclick="remove()">Log out</a>
+            <div id="user" style="color: white;"></div>
+        </nav>
+        <br><br>
+        <button id="delete" onclick="remove()">delete</button>
+        <script>
+            document.getElementById("user").innerText= "User: "+localStorage.getItem("user");
+            function remove(){
+                localStorage.clear();
+            }
+        </script><br>
+        <h3>Actions that will be recored in this page: <br>
+            clicks on each section of this page(link, video, external website...), scroll up and down, mouseover each segment mentioned in clicks and idle time track.</h3>
+
+        <br><br>
+
+        <h1>Externals Page</h1>
+        <iframe id="frame1" src="https://ucsd.edu"></iframe>
+        <iframe id="frame2" src="https://students.ucsd.edu/academics/enroll/index.html"></iframe>
+        <br><br>
+        <video id="video1" width="320" height="240" controls>
+            <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <br><br>
+        <img id="ex_image1" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="jpg" width="150" height="200"> &nbsp; &nbsp;
+        <img id="ex_image2" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="png" width="200" height="100"> &nbsp; &nbsp;
+        <img id="ex_image3" src="https://2.bp.blogspot.com/-xO8y1GFblas/Uu-pV4qcSZI/AAAAAAAABCQ/M8TY10KXRdQ/s1600/File+and+Directory+Create+Java+program.jpg" alt="jpg" width="200" height="100"> &nbsp; &nbsp;
+        <br><br>
+        <script src="http://www.example.com/example.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
+        <br><br>
+        <a id="link1" href="https://www.google.com">Visit google</a><br>
+        <a id="link2" href="https://www.w3schools.com">Visit W3Schools.com</a><br>
+        <a id="link3" href="https://ucsd.edu">Visit ucsd</a><br>
+        <a id="link4" href="https://cse.ucsd.edu">Visit ucsd cse</a><br>
+        <a id="link5" href="http://nus.edu.sg/">Visit nus</a><br>
+    <br><br><br>
+    </body>
+</html>
