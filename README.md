@@ -22,7 +22,7 @@ This page consists of 3 charts containing same data: bar chart, pie chart and li
 This page consists of a data grid with static data. The data grid supports features including sorting, filtering, searching and pagination. The data is user keystroke data recorded from form.html page. The library we used is Zing-Grid.
 
 
-
+## Firebase Usage
 
 firebase founction link:
   Function URL: https://us-central1-cse135-hw3-d14c9.cloudfunctions.net/showdb
